@@ -15,37 +15,33 @@ Una activitat és un esdeveniment en l'aplicació, per exemple en el nostre codi
 En el cas de la nostra activita per exemple quan canviem el comptador i girem la pantalla perdiem l'estat de l'activitat, la qual s'ens demana
 modificar el codi per mantindre-la. Hem d'utilitzar les funcions "onSaveInstanceState" i "onRestoreInstanceState", la primera s'ocupa de guardar
 l'estat de l'activitat i la segona de restaurar-lo. 
-override fun onSaveInstanceState(estat: Bundle) {
- super.onSaveInstanceState(estat)
- // Codi per a guardar l'estat
- estat.putInt("CLAU", valor)
-}
+>	override fun onSaveInstanceState(estat: Bundle) {
+> 		super.onSaveInstanceState(estat)
+> 		estat.putInt("CLAU", valor)
+>	}
 
-override fun onRestoreInstanceState(estat: Bundle) {
- super.onRestoreInstanceState(estat)
- // Codi per a guardar l'estat
- valor=estat.getInt("CLAU")
-}
+>	override fun onRestoreInstanceState(estat: Bundle) {
+>		 super.onRestoreInstanceState(estat)
+>		 valor=estat.getInt("CLAU")
+>	}
 El fitxer implicat es el "MainActivity" que és on afegim les dos funcions anteriors per a que quan girem la pantalla guarde l'estat de l'activitat.
 ###Modificacions inicials
 Com hem dit abans per afegir els botons de resetejar i restar hem afegit en el "MainAtivity.kt" les funcionalitats dels botons i en el "activity_main.xml" 
 hem afegit la vista dels botons.
 ###Activitats sobre el cicle de vida i la pèrdua d'estat
 Una vegada afegides les funcions com fem en aquesta:
-override fun onStart() {
-    super.onStart()
-    Log.d(TAG, "Al mètode onStart") // TAG és una etiqueta prèviament definida
-}
+>	override fun onStart() {
+>	    super.onStart()
+>		 Log.d(TAG, "Al mètode onStart") // TAG és una etiqueta prèviament definida
+>	}
 Si mirem el logcat podem observar en els logs com l'aplicació passa per tots els estats quan l'executes.
 En quant al mal funcionament de pèrdua de l'estat ja ho he comentat en la pregunta "d'Analitza l'estructura d'una Activitat i quins fitxers estan implicats".
 ###Intents entre activitats 
 El que es demana en aquesta activitat ja està implementada en el codi que tenim de base. És aquesta funció la que ho fa:
-// Referencia al boto d'Open
- val btBack=findViewById<Button>(R.id.btBack)
-
-btBack.setOnClickListener {
-    finish()
- } 
+>	 val btBack=findViewById<Button>(R.id.btBack)
+>		btBack.setOnClickListener {
+>   			 finish()
+>		 } 
 **Questió: Per crear una nova activitat, seria suficient amb crear el fitxer XML amb el layout i el fitxer Kotlin amb el codi per gestionar-la?**
 Per a crear l'activita no seria suficient sols amb crear l'XML i el Kotlin, també hi hauria que afegir el fitxer Kotlin a l'AndroidManifest.xml
 ##Bloc 2. Comptador amb MVVM
