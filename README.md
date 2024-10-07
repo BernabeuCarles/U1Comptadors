@@ -1,8 +1,8 @@
-#U1Comptadors
+# U1Comptadors
 
-##Block 1. Activitats sobre el comptador
+## Block 1. Activitats sobre el comptador
 
-###Anàlisi de l'estructura del projecte
+### Anàlisi de l'estructura del projecte
 
 **Comenta el tipus de projecte, quina estructura té (pots incloure captures de pantalla), i quins són els fitxers i carpetes més importants.**
 
@@ -38,12 +38,12 @@ l'estat de l'activitat i la segona de restaurar-lo.
 
 El fitxer implicat es el "MainActivity" que és on afegim les dos funcions anteriors per a que quan girem la pantalla guarde l'estat de l'activitat.
 
-###Modificacions inicials
+### Modificacions inicials
 
 Com hem dit abans per afegir els botons de resetejar i restar hem afegit en el "MainAtivity.kt" les funcionalitats dels botons i en el "activity_main.xml" 
 hem afegit la vista dels botons.
 
-###Activitats sobre el cicle de vida i la pèrdua d'estat
+### Activitats sobre el cicle de vida i la pèrdua d'estat
 
 Una vegada afegides les funcions com fem en aquesta:
 
@@ -55,7 +55,7 @@ Una vegada afegides les funcions com fem en aquesta:
 Si mirem el logcat podem observar en els logs com l'aplicació passa per tots els estats quan l'executes.
 En quant al mal funcionament de pèrdua de l'estat ja ho he comentat en la pregunta "d'Analitza l'estructura d'una Activitat i quins fitxers estan implicats".
 
-###Intents entre activitats 
+### Intents entre activitats 
 
 El que es demana en aquesta activitat ja està implementada en el codi que tenim de base. És aquesta funció la que ho fa:
 
@@ -70,7 +70,7 @@ El que es demana en aquesta activitat ja està implementada en el codi que tenim
 
 Per a crear l'activita no seria suficient sols amb crear l'XML i el Kotlin, també hi hauria que afegir el fitxer Kotlin a l'AndroidManifest.xml
 
-##Bloc 2. Comptador amb MVVM
+## Bloc 2. Comptador amb MVVM
 
 **En quant a afegir els nous botons es pràcticament el mateix que en el primer comptador, hem de afegir la vista en el layout i afegir les funcionalitats i** 
 **definir els botons en el main. La diferència es que no es necessari afegir les funcions per a guardar i restablir l'estat de l'activitat.**
@@ -82,7 +82,7 @@ La resposta seria que no es necessari mitjançant un Intent ja que el comptador 
 sense arguments al compartir el view model. Aquesta és la ventaja de MVVM, que compartint view model podriem també modificar la segona activita i accedir directament al valor 
 a més de mantindre l'estat. 
 
-##Bloc 3. Comptador amb Compose
+## Bloc 3. Comptador amb Compose
 
 En quant al Compose podem destacar que és el mes senzill. Simplement afegint els botons i la funcionalitat d'aquests en el main ja els afegeix i els mostra.
 Simplement hem tingut que afegir la funció Row per a poder organitzar els botons en una fila.
